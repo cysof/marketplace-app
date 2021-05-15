@@ -1,0 +1,66 @@
+{% extends 'accounts/main.html' %}
+
+
+
+{% block content %}
+{% include 'accounts/status.html'%}
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-5">
+			<h5 class="text-center">Customers</h5>
+			<hr>
+			<div class="card card-body">
+				<a href="" class="btn btn-primary btn-sm btn-block"></a>
+					<table class="table table-sm">
+						<tr>
+							<th>Customers</th>
+							<th>Phone</th>
+						</tr>
+						{% for customers in customers %}
+						<tr>
+							<td>{{customers.name}}</td>
+							<td>{{customers.phone}}</td>
+						</tr>
+						{%endfor%}
+
+					</table>
+			</div>
+		</div>	
+
+		<div class="col-md-7">
+			<h5 class="text-center">Order Placed</h5>
+			<hr>
+			<div class="card card-body">
+				<a href="" class="btn btn-primary btn-sm btn-block"></a>
+					<table class="table table-sm">
+						<tr>
+							<th>Products</th>
+							<th>Ordered Date</th>
+							<th>Status</th>
+							<th>Update</th>
+							<th>Remove</th>
+						</tr>
+						{% for orders in orders %}
+							<tr>
+								<td>{{orders.product}}</td>
+								<td>{{orders.date_created}}</td>
+								<td>{{orders.status}}</td>
+								<td><a href="">Update</a></td>
+								<td><a href="">Remove</a></td>
+
+
+							</tr>
+
+
+						{% endfor %}
+
+					</table>
+			</div>
+		</div>	
+
+	</div>
+	
+</div>
+
+{% endblock %}
